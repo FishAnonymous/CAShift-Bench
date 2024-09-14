@@ -1,0 +1,32 @@
+data_dir: /data/c/visitor/CAShift-CSV-Final/Base/train
+test_normal_dir: /data/c/visitor/CAShift-CSV-Final/Base/test-normal
+test_anomaly_dir: /data/c/visitor/CAShift-CSV-Final/Test-Attack/ATTACKHOLDER
+#test_shift_dir: /data/c/visitor/CAShift-CSV-Final/SHIFTHOLDER/test-normal
+test_shift_dir: /data/c/visitor/CAShift-CSV-Demo/SHIFTHOLDER/train
+
+#attack_spec: CVE-2019-5736
+attack_spec: CVE-2019-17671
+shift_spec: App-1
+#shift_spec: Arch-2
+#shift_spec: Version-2
+
+embedding_file: embeddings
+embedding_test_anomaly: test_anomaly_embeddings
+embedding_test_normal: test_normal_embeddings
+#embedding_test_shift: test_shift_embeddings
+embedding_test_shift: retrain_shift_embeddings
+
+tokenizer: bert-base-uncased
+bert_model: bert-base-uncased
+
+lr: 1e-3
+bsz: 512
+num_epoch: 10
+
+window_size: 80
+
+model: VAE
+
+feature_dir: /data1/visitor/FSE-Eval/logAE/RetrainFeature  # once data fixed, do not change
+test_feature_dir: /data1/visitor/FSE-Eval/logAE/FinalFeature  # if empty, use feature_dir
+exp_dir: /data1/visitor/FSE-Eval/logAE/exps/final  # for saving model, log, etc.

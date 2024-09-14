@@ -1,0 +1,24 @@
+data_dir: /data/c/visitor/CB-DS-CSV/train
+#test_anomaly_dir: /data/c/visitor/CB-DS-CSV/test-attack
+#test_anomaly_dir: /data/c/visitor/CAShift-CSV-New/CVE-2019-5736/CVE-2019-5736-Short
+test_anomaly_dir: /data/c/visitor/CAShift-CSV-New/CVE-2019-5736/CVE-2019-5736-Long
+#test_normal_dir: /data/c/visitor/CB-DS-CSV/test-normal
+test_normal_dir: /data/c/visitor/CAShift-CSV-New/test-normal
+
+embedding_file: embeddings.pt
+embedding_test_anomaly: test_anomaly_embeddings.pt
+embedding_test_normal: test_normal_embeddings.pt
+
+tokenizer: bert-base-uncased
+bert_model: bert-base-uncased
+
+lr: 1e-3
+bsz: 512
+num_epoch: 10
+
+window_size: 80
+
+model: VAE
+
+feature_dir: /data1/visitor/FSE-Eval/logAE/NewFeaturesShort  # once data fixed, do not change
+exp_dir: /data1/visitor/FSE-Eval/logAE/exps/NewFeaturesShort  # for saving model, log, etc.
